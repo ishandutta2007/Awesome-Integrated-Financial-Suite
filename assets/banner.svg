@@ -1,0 +1,248 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#070a13"/>
+    </linearGradient>
+
+    <!-- Emerald / Cyan Glow for Finance & Ledgers -->
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+
+    <!-- Accent Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- Glassmorphic Card Background -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.07)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)"/>
+    </linearGradient>
+
+    <!-- Subtle Radial Lights -->
+    <radialGradient id="glowLeft" cx="15%" cy="30%" r="60%">
+      <stop offset="0%" stop-color="rgba(16, 185, 129, 0.25)"/>
+      <stop offset="100%" stop-color="rgba(16, 185, 129, 0)"/>
+    </radialGradient>
+    <radialGradient id="glowRight" cx="85%" cy="70%" r="60%">
+      <stop offset="0%" stop-color="rgba(99, 102, 241, 0.22)"/>
+      <stop offset="100%" stop-color="rgba(99, 102, 241, 0)"/>
+    </radialGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255, 255, 255, 0.035)" stroke-width="1"/>
+      <circle cx="40" cy="0" r="1.5" fill="rgba(16, 185, 129, 0.15)"/>
+    </pattern>
+
+    <!-- Drop Shadows -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <style>
+    .title-text {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 46px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+    .subtitle-text {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 19px;
+      font-weight: 500;
+      fill: #94a3b8;
+    }
+    .tagline-text {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      fill: #10b981;
+    }
+    .pill-text {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      fill: #e2e8f0;
+    }
+
+    /* CSS Keyframe Animations */
+    @keyframes pulseOrb {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.18); opacity: 1; }
+    }
+    @keyframes floatCard {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes sweepLine {
+      0% { stroke-dashoffset: 400; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes waveBar {
+      0%, 100% { height: 18px; y: 42px; }
+      50% { height: 38px; y: 22px; }
+    }
+
+    .animated-orb {
+      transform-origin: center;
+      animation: pulseOrb 6s ease-in-out infinite;
+    }
+    .floating-card-1 {
+      animation: floatCard 5s ease-in-out infinite;
+    }
+    .floating-card-2 {
+      animation: floatCard 6s ease-in-out infinite reverse;
+    }
+    .animated-chart-line {
+      stroke-dasharray: 400;
+      animation: sweepLine 3.5s linear infinite;
+    }
+    .bar-anim-1 { animation: waveBar 2.2s ease-in-out infinite; }
+    .bar-anim-2 { animation: waveBar 2.2s ease-in-out infinite 0.4s; }
+    .bar-anim-3 { animation: waveBar 2.2s ease-in-out infinite 0.8s; }
+    .bar-anim-4 { animation: waveBar 2.2s ease-in-out infinite 1.2s; }
+  </style>
+
+  <!-- 1. Background Fill -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+
+  <!-- 2. Ambient Glowing Orbs (in background) -->
+  <rect width="1200" height="420" rx="16" fill="url(#glowLeft)" />
+  <rect width="1200" height="420" rx="16" fill="url(#glowRight)" />
+
+  <!-- 3. Tech Grid Overlay -->
+  <rect width="1200" height="420" rx="16" fill="url(#gridPattern)" />
+
+  <!-- 4. Subtle Dynamic Financial Ledger Chart in Background (Right Half) -->
+  <g transform="translate(620, 40)" opacity="0.45" filter="url(#shadow)">
+    <!-- Simulated Chart Backdrop -->
+    <rect x="0" y="0" width="530" height="340" rx="16" fill="url(#cardGrad)" stroke="rgba(255,255,255,0.08)" stroke-width="1.5" />
+    
+    <!-- Chart Header -->
+    <circle cx="28" cy="28" r="6" fill="#ef4444" opacity="0.7"/>
+    <circle cx="46" cy="28" r="6" fill="#f59e0b" opacity="0.7"/>
+    <circle cx="64" cy="28" r="6" fill="#10b981" opacity="0.7"/>
+    <text x="90" y="32" font-family="sans-serif" font-size="12" font-weight="600" fill="#64748b">GLOBAL CONSOLIDATED LEDGER • REAL-TIME GAAP / IFRS</text>
+    
+    <!-- Grid lines -->
+    <line x1="25" y1="90" x2="505" y2="90" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+    <line x1="25" y1="160" x2="505" y2="160" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+    <line x1="25" y1="230" x2="505" y2="230" stroke="rgba(255,255,255,0.05)" stroke-dasharray="4"/>
+    <line x1="25" y1="300" x2="505" y2="300" stroke="rgba(255,255,255,0.05)"/>
+
+    <!-- Animated Financial Growth Line Graph -->
+    <path class="animated-chart-line" d="M 35 240 Q 120 220 180 170 T 320 140 T 420 85 T 495 65" 
+          fill="none" stroke="url(#primaryGrad)" stroke-width="3.5" stroke-linecap="round"/>
+    
+    <!-- Area under curve (subtle) -->
+    <path d="M 35 240 Q 120 220 180 170 T 320 140 T 420 85 T 495 65 L 495 300 L 35 300 Z" 
+          fill="url(#primaryGrad)" opacity="0.08"/>
+
+    <!-- Data Points -->
+    <circle cx="180" cy="170" r="4.5" fill="#06b6d4" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="320" cy="140" r="4.5" fill="#10b981" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="495" cy="65" r="5.5" fill="#fbbf24" stroke="#ffffff" stroke-width="2"/>
+    
+    <!-- Floating Balance Metric Badge -->
+    <g class="floating-card-1" transform="translate(330, 200)">
+      <rect width="160" height="70" rx="10" fill="#0b1329" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1" filter="url(#badgeShadow)"/>
+      <text x="14" y="24" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#94a3b8" letter-spacing="0.5">NET CASH FLOW</text>
+      <text x="14" y="50" font-family="sans-serif" font-size="19" font-weight="800" fill="#10b981">+99.98%</text>
+      <path d="M 125 45 L 138 32 L 132 32 M 138 32 L 138 38" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+
+    <!-- Mini Floating Card: Reconciliation -->
+    <g class="floating-card-2" transform="translate(45, 175)">
+      <rect width="150" height="65" rx="10" fill="#0b1329" stroke="rgba(99, 102, 241, 0.4)" stroke-width="1" filter="url(#badgeShadow)"/>
+      <text x="14" y="22" font-family="sans-serif" font-size="10" font-weight="700" fill="#94a3b8" letter-spacing="0.5">AUTO RECONCILED</text>
+      <text x="14" y="47" font-family="sans-serif" font-size="18" font-weight="800" fill="#38bdf8">100.0%</text>
+      <text x="100" y="47" font-family="sans-serif" font-size="14">⚡</text>
+    </g>
+  </g>
+
+  <!-- 5. Foreground Content (Guaranteed Never Obscured) -->
+  <g transform="translate(80, 0)">
+    <!-- Tagline / Badge -->
+    <g transform="translate(0, 72)">
+      <rect width="250" height="30" rx="15" fill="rgba(16, 185, 129, 0.12)" stroke="rgba(16, 185, 129, 0.3)" stroke-width="1"/>
+      <circle cx="15" cy="15" r="4" fill="#10b981" class="animated-orb"/>
+      <text x="28" y="20" class="tagline-text">FINTECH &amp; ERP ECOSYSTEM</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="155" class="title-text" fill="#ffffff">
+      Awesome Integrated <tspan fill="url(#primaryGrad)">Financial Suite</tspan>
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="202" class="subtitle-text">
+      The ultimate directory of enterprise cloud ERPs, modern SaaS accounting,
+    </text>
+    <text x="0" y="232" class="subtitle-text">
+      and self-hosted double-entry open-source financial infrastructure.
+    </text>
+
+    <!-- Feature Pills / Highlights -->
+    <g transform="translate(0, 282)">
+      <!-- Pill 1: General Ledger -->
+      <g transform="translate(0, 0)" filter="url(#badgeShadow)">
+        <rect width="145" height="36" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+        <text x="16" y="23" font-size="14">📒</text>
+        <text x="38" y="23" class="pill-text">General Ledger</text>
+      </g>
+
+      <!-- Pill 2: Invoicing & Billing -->
+      <g transform="translate(157, 0)" filter="url(#badgeShadow)">
+        <rect width="158" height="36" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+        <text x="16" y="23" font-size="14">💳</text>
+        <text x="38" y="23" class="pill-text">Invoicing &amp; Billing</text>
+      </g>
+
+      <!-- Pill 3: ERP Financials -->
+      <g transform="translate(327, 0)" filter="url(#badgeShadow)">
+        <rect width="148" height="36" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+        <text x="16" y="23" font-size="14">🏛️</text>
+        <text x="38" y="23" class="pill-text">ERP Financials</text>
+      </g>
+
+      <!-- Pill 4: Multi-Currency -->
+      <g transform="translate(487, 0)" filter="url(#badgeShadow)">
+        <rect width="148" height="36" rx="18" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1"/>
+        <text x="16" y="23" font-size="14">🌐</text>
+        <text x="38" y="23" class="pill-text">Multi-Currency</text>
+      </g>
+
+      <!-- Pill 5: Open-Source -->
+      <g transform="translate(647, 0)" filter="url(#badgeShadow)">
+        <rect width="168" height="36" rx="18" fill="rgba(16, 185, 129, 0.12)" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1"/>
+        <text x="16" y="23" font-size="14">⭐</text>
+        <text x="38" y="23" class="pill-text" fill="#34d399">100% Open-Source</text>
+      </g>
+    </g>
+
+    <!-- Mini Bottom Status line -->
+    <g transform="translate(0, 360)">
+      <circle cx="6" cy="6" r="4" fill="#10b981" />
+      <text x="20" y="10" font-family="'Inter', sans-serif" font-size="12" font-weight="600" fill="#64748b">
+        Curated for CFOs, Accountants, Financial Engineers &amp; ERP Architects • Continuously Updated
+      </text>
+    </g>
+  </g>
+
+  <!-- Outer Border -->
+  <rect x="1" y="1" width="1198" height="418" rx="15" fill="none" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1"/>
+</svg>
